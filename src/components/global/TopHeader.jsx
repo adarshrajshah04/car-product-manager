@@ -20,7 +20,7 @@ const TopHeader = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-     <header className="absolute inset-x-0 top-0 z-50">
+     <header className="fixed inset-x-0 top-0 z-50 bg-gray-700/80">
         <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
           <div className="flex lg:flex-1">
             <a href="#" className="-m-1.5 p-1.5">
@@ -55,7 +55,7 @@ const TopHeader = () => {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <Link to="#" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
+            <Link to="/login" className="text-sm/6 font-semibold text-gray-900 dark:text-white">
               Log in <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
@@ -100,12 +100,12 @@ const TopHeader = () => {
                   ))}
                 </div>
                 <div className="py-6">
-                  <a
-                    href="#"
+                  <Link
+                    to="/login"
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50 dark:text-white dark:hover:bg-white/5"
                   >
                     Log in
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

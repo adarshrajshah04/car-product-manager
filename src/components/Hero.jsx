@@ -7,7 +7,7 @@
 export default function Hero() {
 
   return (
-    <div className="bg-white dark:bg-gray-900">
+    <div className= "overflow-hidden bg-white dark:bg-gray-900">
         
      
 
