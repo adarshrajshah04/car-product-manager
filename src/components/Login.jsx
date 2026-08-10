@@ -3,12 +3,10 @@ import { Formik } from "formik";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-
-
 export default function Login() {
   const [loginError, setLoginError] = useState("");
-  const [userData, setuserData] = useState({});
-  const navigate = useNavigate();
+  
+  const home = useNavigate();
 
   return (
     <div className="h-screen bg-gray-800 mt-20">
@@ -53,12 +51,10 @@ export default function Login() {
                     // console.log(response.data)
                     //2. save accessToken in sessionStorage
                     //3. Navigate to home page
-                    setuserData(response.data);
-
                     
 
-                    sessionStorage.setItem("accessToken", userData.accessToken);
-                   
+                    sessionStorage.setItem("accessToken", response.data.accessToken);
+                    home("/home"); // home page pe bhene ke liye
                   })
                   .catch(() => {
                     // setLoginError(error.response.data.message)
@@ -66,7 +62,6 @@ export default function Login() {
                   });
                 setSubmitting(false);
               }, 400);
-              navigate("/home");
             }}
           >
             {({
